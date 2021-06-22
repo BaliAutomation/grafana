@@ -1,6 +1,6 @@
 {
   "name": "@grafana-plugins/admin-app",
-  "version": "8.1.0-pre-45a5510978",
+  "version": "8.1.0-pre-45a5510978-f08035ab72-f08035ab72",
   "description": "Plugins admin",
   "private": true,
   "repository": {
@@ -15,10 +15,10 @@
   },
   "author": "Grafana Labs",
   "devDependencies": {
-    "@grafana/data": "8.1.0-pre-45a5510978",
-    "@grafana/runtime": "8.1.0-pre-45a5510978",
-    "@grafana/toolkit": "8.1.0-pre-45a5510978",
-    "@grafana/ui": "8.1.0-pre-45a5510978"
+    "@grafana/data": "8.1.0-pre-45a5510978-f08035ab72-f08035ab72",
+    "@grafana/runtime": "8.1.0-pre-45a5510978-f08035ab72-f08035ab72",
+    "@grafana/toolkit": "8.1.0-pre-45a5510978-f08035ab72-f08035ab72",
+    "@grafana/ui": "8.1.0-pre-45a5510978-f08035ab72-f08035ab72"
   },
   "volta": {
     "extends": "../../../package.json"
