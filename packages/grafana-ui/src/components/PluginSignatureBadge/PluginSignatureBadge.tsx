@@ -60,10 +60,9 @@ function getSignatureDisplayModel(signature?: PluginSignatureStatus): BadgeProps
       };
     default:
       return {
-        text: 'Unsigned',
-        icon: 'exclamation-triangle',
-        color: 'red',
-        tooltip: 'Unsigned external plugin',
+        text: 'Sensetif',
+        color: 'green',
+        tooltip: 'Mandatory Sensetif plugin',
       };
   }
 }

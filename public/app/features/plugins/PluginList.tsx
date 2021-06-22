@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import PluginListItem from './PluginListItem';
-import { PluginMeta } from '@grafana/data';
+import { PluginMeta, PluginType } from '@grafana/data';
 import { selectors } from '@grafana/e2e-selectors';
 
 interface Props {
@@ -13,9 +13,14 @@ const PluginList: FC<Props> = (props) => {
   return (
     <section className="card-section card-list-layout-list">
       <ol className="card-list" aria-label={selectors.pages.PluginsList.list}>
-        {plugins.map((plugin, index) => {
-          return <PluginListItem plugin={plugin} key={`${plugin.name}-${index}`} />;
-        })}
+        {plugins
+          .filter(
+            (plugin, index) =>
+              plugin.type !== PluginType.datasource || plugin.name.toLowerCase().indexOf('sensetif') >= 0
+          )
+          .map((plugin, index) => {
+            return <PluginListItem plugin={plugin} key={`${plugin.name}-${index}`} />;
+          })}
       </ol>
     </section>
   );

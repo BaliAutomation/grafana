@@ -2,7 +2,7 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import { connect, ConnectedProps } from 'react-redux';
 import Page from 'app/core/components/Page/Page';
-import PageActionBar from 'app/core/components/PageActionBar/PageActionBar';
+// import PageActionBar from 'app/core/components/PageActionBar/PageActionBar';
 import PluginList from './PluginList';
 import { loadPlugins } from './state/actions';
 import { getNavModel } from 'app/core/selectors/navModel';
@@ -41,7 +41,7 @@ export const PluginListPage: React.FC<Props> = ({
     loadPlugins();
   }, [loadPlugins]);
 
-  let actionTarget: string | undefined = '_blank';
+  // let actionTarget: string | undefined = '_blank';
   const linkButton = {
     href: 'https://grafana.com/plugins?utm_source=grafana_plugin_list',
     title: 'Find more plugins on Grafana.com',
@@ -50,20 +50,13 @@ export const PluginListPage: React.FC<Props> = ({
   if (config.pluginAdminEnabled) {
     linkButton.href = '/a/grafana-plugin-admin-app/';
     linkButton.title = 'Install & manage plugins';
-    actionTarget = undefined;
+    // actionTarget = undefined;
   }
 
   return (
     <Page navModel={navModel} aria-label={selectors.pages.PluginsList.page}>
       <Page.Contents isLoading={!hasFetched}>
         <>
-          <PageActionBar
-            searchQuery={searchQuery}
-            setSearchQuery={(query) => setPluginsSearchQuery(query)}
-            linkButton={linkButton}
-            placeholder="Search by name, author, description or type"
-            target={actionTarget}
-          />
           <PluginsErrorsInfo />
           {hasFetched && plugins && <PluginList plugins={plugins} />}
         </>

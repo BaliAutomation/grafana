@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 // Components
 import Page from 'app/core/components/Page/Page';
-import PageActionBar from 'app/core/components/PageActionBar/PageActionBar';
+// import PageActionBar from 'app/core/components/PageActionBar/PageActionBar';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import DataSourcesList from './DataSourcesList';
 // Types
@@ -52,20 +52,7 @@ export class DataSourcesListPage extends PureComponent<Props> {
   }
 
   render() {
-    const {
-      dataSources,
-      dataSourcesCount,
-      navModel,
-      layoutMode,
-      searchQuery,
-      setDataSourcesSearchQuery,
-      hasFetched,
-    } = this.props;
-
-    const linkButton = {
-      href: 'datasources/new',
-      title: 'Add data source',
-    };
+    const { dataSources, dataSourcesCount, navModel, layoutMode, hasFetched } = this.props;
 
     return (
       <Page navModel={navModel}>
@@ -74,12 +61,12 @@ export class DataSourcesListPage extends PureComponent<Props> {
             {hasFetched && dataSourcesCount === 0 && <EmptyListCTA {...emptyListModel} />}
             {hasFetched &&
               dataSourcesCount > 0 && [
-                <PageActionBar
-                  searchQuery={searchQuery}
-                  setSearchQuery={(query) => setDataSourcesSearchQuery(query)}
-                  linkButton={linkButton}
-                  key="action-bar"
-                />,
+                // <PageActionBar
+                //   searchQuery={searchQuery}
+                //   setSearchQuery={(query) => setDataSourcesSearchQuery(query)}
+                //   linkButton={linkButton}
+                //   key="action-bar"
+                // />,
                 <DataSourcesList dataSources={dataSources} layoutMode={layoutMode} key="list" />,
               ]}
           </>
